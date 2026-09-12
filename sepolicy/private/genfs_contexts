@@ -1,0 +1,2 @@
+genfscon proc /ax_named_thread_affinity u:object_r:proc_ax_named_thread_affinity:s0
+genfscon proc /ax_dragonite u:object_r:proc_ax_dragonite:s0

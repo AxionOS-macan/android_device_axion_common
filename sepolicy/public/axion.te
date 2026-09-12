@@ -1,1 +1,3 @@
+type proc_ax_dragonite, fs_type, proc_type;
+type proc_ax_named_thread_affinity, fs_type, proc_type;
 type axion_perf_config_file, system_file_type, file_type;
