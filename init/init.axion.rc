@@ -6,5 +6,5 @@ on zygote-start && property:persist.sys.ax_hbm_supp=true && property:persist.sys
     chown system system ${persist.sys.hbmservice_file}
     chmod 0775 ${persist.sys.hbmservice_file}
 
-on property:persist.sys.boot_completed=* && property:persist.sys.ax_touch_boost=true && property:persist.sys.touchboost_enable=*
+on property:sys.boot_completed=* && property:persist.sys.ax_touch_boost=true && property:persist.sys.touchboost_enable=*
     setprop persist.vendor.touch_sensitivity_mode ${persist.sys.touchboost_enable}
