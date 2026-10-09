@@ -5,7 +5,7 @@ TARGET_SHIPS_AXION_KERNEL_MODULES ?= true
 TARGET_SUPPORTS_KERNEL_MANAGER ?= true
 TARGET_DISABLES_LIBPERF ?= true
 
-AXION_TARGET_DEVICE := $(strip $(or $(TARGET_DEVICE),$(PRODUCT_DEVICE)))
+AXION_TARGET_DEVICE := $(strip $(or $(LINEAGE_BUILD),$(TARGET_DEVICE),$(PRODUCT_DEVICE)))
 
 ifeq ($(TARGET_SUPPORTS_KERNEL_MANAGER),true)
 ifneq ($(filter gs101 gs201 zuma zumapro,$(TARGET_BOARD_PLATFORM)),)
@@ -59,7 +59,7 @@ AXION_PLATFORM_INIT_RC := $(firstword $(wildcard \
     device/axion/common/init/ax_init_$(AXION_SOC).rc))
 ifneq ($(AXION_PLATFORM_INIT_RC),)
 PRODUCT_COPY_FILES += \
-    $(AXION_PLATFORM_INIT_RC):$(TARGET_COPY_OUT_VENDOR)/etc/init/ax_init_$(AXION_SOC).rc
+    $(AXION_PLATFORM_INIT_RC):$(TARGET_COPY_OUT_VENDOR)/etc/init/ax_init.rc
 endif
 
 AXION_PERF_THERMAL_CONFIG := $(firstword $(wildcard \
